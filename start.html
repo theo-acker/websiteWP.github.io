@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Start — MonSite</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar__logo">Mon<span>Site</span></a>
+    <div class="navbar__actions">
+      <a href="start.html"   class="btn btn--start">Start</a>
+      <a href="apropos.html" class="btn btn--ghost">À propos</a>
+    </div>
+  </nav>
+
+  <!-- ── Contenu principal ── -->
+  <main class="page">
+    <div class="section">
+      <span class="section__tag">Guide rapide</span>
+      <h1 class="section__title">Par où commencer ?</h1>
+      <p class="section__body">
+        Suivez ces étapes pour lancer votre projet.
+        Chaque carte est entièrement modifiable dans <code>start.html</code>.
+      </p>
+
+      <!-- Grille des étapes -->
+      <div class="start-grid">
+
+        <div class="start-card">
+          <div class="start-card__num">01</div>
+          <h2 class="start-card__title">Configurez votre environnement</h2>
+          <p class="start-card__desc">Créez un dépôt GitHub et activez GitHub Pages depuis les paramètres du repo (onglet Pages).</p>
+        </div>
+
+        <div class="start-card">
+          <div class="start-card__num">02</div>
+          <h2 class="start-card__title">Personnalisez les fichiers</h2>
+          <p class="start-card__desc">Modifiez index.html, start.html et apropos.html selon vos besoins. Adaptez style.css à votre identité.</p>
+        </div>
+
+        <div class="start-card">
+          <div class="start-card__num">03</div>
+          <h2 class="start-card__title">Ajoutez votre contenu</h2>
+          <p class="start-card__desc">Remplacez les textes, images et couleurs. Intégrez des API externes si besoin via JavaScript.</p>
+        </div>
+
+        <div class="start-card">
+          <div class="start-card__num">04</div>
+          <h2 class="start-card__title">Publiez sur GitHub Pages</h2>
+          <p class="start-card__desc">Poussez vos fichiers sur la branche <code>main</code>. Votre site sera accessible à l'adresse <code>username.github.io/repo</code>.</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ── Pied de page ── -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> MonSite — Tous droits réservés</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

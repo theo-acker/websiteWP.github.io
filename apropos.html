@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À propos — MonSite</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar__logo">Mon<span>Site</span></a>
+    <div class="navbar__actions">
+      <a href="start.html"   class="btn btn--start">Start</a>
+      <a href="apropos.html" class="btn btn--ghost">À propos</a>
+    </div>
+  </nav>
+
+  <!-- ── Contenu principal ── -->
+  <main class="page">
+    <div class="section">
+      <span class="section__tag">À propos</span>
+      <h1 class="section__title">Qui sommes-nous ?</h1>
+      <div class="section__body">
+        <p>
+          Bienvenue sur <strong>MonSite</strong>. Ce projet est né de la volonté de créer
+          quelque chose de simple, efficace et facilement personnalisable.
+        </p>
+        <p>
+          Remplacez ce texte par votre présentation : votre histoire, vos valeurs,
+          votre équipe ou la mission de votre projet.
+        </p>
+        <p>
+          Ce fichier (<code>apropos.html</code>) est l'une des trois pages du site.
+          Modifiez-le librement pour y intégrer votre contenu réel.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── Pied de page ── -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> MonSite — Tous droits réservés</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
