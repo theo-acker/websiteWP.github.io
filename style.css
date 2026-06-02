@@ -1,101 +1,173 @@
 /* ================================================
-   style.css — Feuille de style principale
+   style.css
    ================================================ */
 
-/* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+/* No scroll — fixed viewport */
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
 
 body {
-  background-color: #ffffff;
+  background-color: #f5f4f0;
   color: #111111;
-  font-family: sans-serif;
+  font-family: 'Georgia', 'Times New Roman', serif;
   font-size: 1rem;
   line-height: 1.6;
-  min-height: 100vh;
 }
 
 a { color: inherit; text-decoration: none; }
 
-/* ── Navigation ── */
+/* ── Navbar ── */
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: 60px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  background: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
+  background: transparent;
   z-index: 100;
 }
 
 .navbar__logo {
   font-weight: bold;
-  font-size: 1.1rem;
-  color: #111111;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  color: #111;
 }
 
 .navbar__actions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
 }
 
-/* ── Boutons ── */
+/* ── Buttons ── */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.45rem 1.2rem;
-  font-size: 0.85rem;
+  padding: 0.45rem 1.3rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  border-radius: 4px;
+  border-radius: 3px;
   cursor: pointer;
   border: none;
+  letter-spacing: 0.04em;
 }
 
-/* Bouton START — rouge */
-.btn--start {
+/* White ghost button */
+.btn--ghost {
+  background: #ffffff;
+  color: #222222;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.btn--ghost:hover {
+  background: #f0f0f0;
+  border-color: #999;
+}
+
+/* Red CTA */
+.btn--cta {
   background: #e5281a;
   color: #ffffff;
+  font-size: 0.9rem;
+  padding: 0.65rem 2.8rem;
+  letter-spacing: 0.1em;
+  box-shadow: 0 3px 12px rgba(229,40,26,0.3);
+  transition: background 0.15s, box-shadow 0.15s;
 }
-
-.btn--start:hover {
+.btn--cta:hover {
   background: #c9200f;
+  box-shadow: 0 4px 18px rgba(229,40,26,0.4);
 }
 
-/* Bouton À propos — discret */
-.btn--ghost {
-  background: transparent;
-  color: #444444;
-  border: 1px solid #cccccc;
+/* ── Hero — full viewport, no scroll ── */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 56px; /* navbar height */
 }
 
-.btn--ghost:hover {
-  border-color: #888888;
-  color: #111111;
+/* ── First third: card ── */
+.card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1.4rem 1.8rem;
+  width: min(540px, 90vw);
+  margin-top: calc((100vh - 56px) * 0.04);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  transition: box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.card:hover {
+  box-shadow: 0 6px 28px rgba(0,0,0,0.13);
+  transform: translateY(-2px);
 }
 
-/* ── Layout principal ── */
-.page {
-  padding-top: 60px;
-  min-height: 100vh;
+/* Left: ID-photo-sized illustration */
+.card__illustration {
+  flex-shrink: 0;
+  width: 90px;
+  height: 110px;
+  background: #f0eeea;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  overflow: hidden;
+}
+.card__illustration img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* ── Footer ── */
-.footer {
-  text-align: center;
-  padding: 1.5rem 1rem;
-  border-top: 1px solid #e0e0e0;
-  color: #999999;
-  font-size: 0.8rem;
+/* Right: text */
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.3;
+}
+.card__sub {
+  font-size: 0.82rem;
+  color: #666;
+  line-height: 1.5;
+}
+.card__link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #e5281a;
+  margin-top: 0.2rem;
+}
+
+/* ── Second third: CTA button ── */
+.btn--cta {
+  margin-top: calc((100vh - 56px) * 0.10);
 }
 
 /* ── Responsive ── */
-@media (max-width: 600px) {
+@media (max-width: 500px) {
+  .card { flex-direction: column; align-items: flex-start; }
+  .card__illustration { width: 70px; height: 85px; }
   .navbar { padding: 0 1rem; }
-  .btn { padding: 0.4rem 0.9rem; font-size: 0.78rem; }
 }
