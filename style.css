@@ -150,6 +150,8 @@ a { color: inherit; text-decoration: none; }
 .card__illustration img {
   width: 100%;
   height: 100%;
+  max-width: 90px;
+  max-height: 110px;
   object-fit: cover;   /* couvre l'encadré sans déformer */
   object-position: center;
   display: block;
@@ -179,9 +181,20 @@ a { color: inherit; text-decoration: none; }
   margin-top: 0.2rem;
 }
 
+/* ── Texte latin ── */
+.hero__latin {
+  width: min(720px, 90vw);
+  margin-top: calc((100vh - 56px) * 0.05);
+  font-size: 0.88rem;
+  color: #444;
+  line-height: 1.75;
+  text-align: justify;
+  text-align-last: center;
+}
+
 /* ── Second third: CTA button ── */
 .btn--cta {
-  margin-top: calc((100vh - 56px) * 0.10);
+  margin-top: calc((100vh - 56px) * 0.05);
 }
 
 /* ── Responsive ── */
