@@ -16,7 +16,7 @@ document.querySelector('meta[name="viewport"]') || (() => {
 
 // Favicon
 const favicon = document.createElement('link');
-favicon.rel = 'icon'; favicon.href = 'images/chat.png'; favicon.type = 'image/png';
+favicon.rel = 'icon'; favicon.href = 'Images/chat.png'; favicon.type = 'image/png';
 head.appendChild(favicon);
 
 // CSS
